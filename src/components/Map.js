@@ -16,6 +16,64 @@ const Map = () => {
       const webmap = new WebMap({
         basemap: "topo-vector",
       });
+
+      const renderer = {
+        type: "simple",
+        field: "arrest_charge",
+        symbol: {
+          type: "simple-marker",
+          color: "orange",
+          outline: {
+            color: "white",
+          },
+        },
+        visualVariables: [
+          {
+            type: "color",
+            field: "arrest_charge",
+            stops: [
+              {
+                value: "12000",
+                color: "#493d26",
+              },
+              {
+                value: "20000",
+                color: "red",
+              },
+              {
+                value: "26003",
+                color: "green",
+              },
+              {
+                value: "38003",
+                color: "#c85a17",
+              },
+              {
+                value: "26009",
+                color: "purple",
+              },
+              {
+                value: "70000",
+                color: "#565051",
+              },
+              {
+                value: "24001",
+                color: "brown",
+              },
+              {
+                value: "13002",
+                color: "#f75d59",
+              },
+            ],
+          },
+        ],
+      };
+
+      const template = {
+        title: "Crime Information",
+        content: "Crime Category: {offense_description} at {address}",
+      };
+
       view = new MapView({
         map: webmap,
         center: [-83, 42.25],
@@ -26,6 +84,8 @@ const Map = () => {
 
       const geojsonLayer = new GeoJSONLayer({
         url: "https://raw.githubusercontent.com/adarshvarma15/mygeojson/main/RMS_Crime_Incidents%20edited.geojson",
+        renderer: renderer,
+        popupTemplate: template,
       });
 
       webmap.add(geojsonLayer);
