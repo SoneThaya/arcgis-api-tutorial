@@ -19,7 +19,7 @@ const Map = () => {
 
       const renderer = {
         type: "simple",
-        field: "arrest_charge",
+        field: "total_deaths",
         symbol: {
           type: "simple-marker",
           color: "orange",
@@ -30,7 +30,7 @@ const Map = () => {
         visualVariables: [
           {
             type: "color",
-            field: "arrest_charge",
+            field: "total_deaths",
             stops: [
               {
                 value: "12000",
@@ -70,20 +70,20 @@ const Map = () => {
       };
 
       const template = {
-        title: "Crime Information",
-        content: "Crime Category: {offense_description} at {address}",
+        title: "World War II Casualties",
+        content: "{country}: {total_deaths} total deaths",
       };
 
       view = new MapView({
         map: webmap,
-        center: [-83, 42.25],
-        zoom: 10,
+        center: [14.550072, 47.516231],
+        zoom: 3,
         // use the ref as a container
         container: MapEl.current,
       });
 
       const geojsonLayer = new GeoJSONLayer({
-        url: "https://raw.githubusercontent.com/adarshvarma15/mygeojson/main/RMS_Crime_Incidents%20edited.geojson",
+        url: "https://raw.githubusercontent.com/SoneThaya/mygeojson/main/RMS_Crime_Incidents%20edited.geojson",
         renderer: renderer,
         popupTemplate: template,
       });

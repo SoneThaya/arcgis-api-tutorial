@@ -1,9 +1,10 @@
-import './App.css';
-import Map from './components/Map';
+import "./App.css";
+import Map from "./components/Map";
 
 function App() {
   return (
     <div className="App">
+      <h1>World War II Casualties</h1>
       <Map />
     </div>
   );
