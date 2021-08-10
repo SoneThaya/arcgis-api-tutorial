@@ -33,15 +33,15 @@ const Map = () => {
             field: "total_deaths",
             stops: [
               {
-                value: "12000",
+                value: "1200000",
                 color: "#493d26",
               },
               {
-                value: "20000",
+                value: "10000000",
                 color: "red",
               },
               {
-                value: "26003",
+                value: "329000",
                 color: "green",
               },
               {
@@ -49,7 +49,7 @@ const Map = () => {
                 color: "#c85a17",
               },
               {
-                value: "26009",
+                value: "96000",
                 color: "purple",
               },
               {
@@ -63,6 +63,10 @@ const Map = () => {
               {
                 value: "13002",
                 color: "#f75d59",
+              },
+              {
+                value: "2000",
+                color: "cyan",
               },
             ],
           },
